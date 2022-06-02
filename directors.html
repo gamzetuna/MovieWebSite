@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="anasayfa.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <style>
+      
+    </style>
+</head>
+<div class="logo">
+    <img src="images/logofb.jpg" style="width:100px;" />
+</div>
+<div class="navbar">
+    <div class="subnav">
+        <button class="subnavbtn" onclick="window.location.href='anasayfa.html'"> Filmler </button>
+    </div>
+    <div class="subnav">
+        <button class="subnavbtn" onclick="window.location.href='tur.html'"> Tür <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+            <a href="#romantic">Romantic</a>
+                <a href="#comedi">Comedy</a>
+                <a href="#aksiyon">Action</a>
+                <a href="#korku">Horror</a>
+                <a href="animasyon.html">Animasyon</a>
+                <a href="#fantastik">Fantasy</a>
+            <!--<a href="#macera">Adventure</a>
+            <a href="#fantastik">Fantasy</a>
+            <a href="#batılı">Western</a>
+            <a href="#bilimkurgu">Science Fiction</a>
+            <a href="#dram">Drama</a>
+            <a href="animasyon.html">Animasyon</a>
+            <a href="#çizgifilm">Cartoon</a>
+            <a href="#gizem">Mystery</a>
+            <a href="#savaş">War</a>
+            <a href="#spor">Spor</a>-->
+        </div>
+    </div>
+    <div class="subnav">
+        <button class="subnavbtn" onclick="window.location.href='directors.html'"> Yönetmenler <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+            <a href="#">En Popüler Yönetmenler</a>
+            <a href="#">En Çok Ödül Alan Yönetmenler</a>
+            <a href="#">En Çok İzlenen Yönetmenler</a>
+        </div>
+    </div>
+    <div class="subnav">
+        <button class="subnavbtn" onclick="window.location.href='actors.html'"> Oyuncular <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+            <a href="#">En Popüler Oyuncular</a>
+            <a href="#">En Çok Ödül Alan Oyuncular</a>
+        </div>
+    </div>
+    <div id="giriskayit">
+        <a class="navbar" href="#" onclick="openForm()">Kayıt Ol</a>
+        <a class="navbar" href="#" onclick="openForm2()">Giriş Yap</a>
+    </div>
+</div>
+
+<div id="myForm" class="myForm1">
+    <form class="kayitform">
+        <h3>Kayıt Ol</h3>
+
+        <label for="username"><b>Kullanıcı Nickname</b></label>
+        <input type="text" placeholder="Email or Phone" id="username">
+
+        <label for="name"><b>İsim</b></label>
+        <input type="text" name="isim" value="" placeholder="Ad Giriniz" required />
+
+        <label for="password">Şifre</label>
+        <input type="password" placeholder="Password" id="password">
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="birthday"><b>Doğum Tarihi</b></label>
+        <input type="date" name="dtarihi" value="" />
+
+        <button>Giriş</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Kapat</button>
+
+        <div class="social">
+            <div class="go"><i class="fab fa-google"></i>  Google</div>
+            <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div>
+    </form>
+</div>
+
+<div id="myFormKayit" class="myForm1">
+    <form class="Girisform">
+        <h3>Kullanıcı Girişi</h3>
+
+        <label for="username">Kullanıcı Adı</label>
+        <input type="text" placeholder="Email or Phone" id="username">
+
+        <label for="password">Şifre</label>
+        <input type="password" placeholder="Password" id="password">
+
+        <button>Giriş</button>
+        <button type="button" class="btn cancel" onclick="closeForm2()">Kapat</button>
+
+        <div class="social">
+            <div class="go"><i class="fab fa-google"></i>  Google</div>
+            <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function openForm() {
+        document.getElementById("myForm").classList.toggle("myForm1");
+        //    document.getElementById("myForm").style.display = "block";
+        //    document.getElementById("p5").classList.toggle("yeniStil");
+    }
+
+    function closeForm() {
+        //document.getElementById("myForm").style.display = "none";
+        document.getElementById("myForm").classList.toggle("myForm1");
+    }
+    function openForm2() {
+        document.getElementById("myFormKayit").classList.toggle("myForm1");
+        //    document.getElementById("myForm").style.display = "block";
+        //    document.getElementById("p5").classList.toggle("yeniStil");
+    }
+
+    function closeForm2() {
+        //document.getElementById("myForm").style.display = "none";
+        document.getElementById("myFormKayit").classList.toggle("myForm1");
+    }
+</script>
+
+    <!--movies---------------------------->
+    <div class="movies-heading">
+    </div>
+    <section id="movies-list">
+        <!--box-1------------------------>
+        <div class="movies-box">
+            <!--img------------>
+            <div class="movies-img">
+                <img src="directors/amirkhan.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://tr.wikipedia.org/wiki/Aamir_Khan">
+              <h1>Amir Khan</h1></a>
+              <div  style="color: white;" >
+                <li>Dangal</li>
+                <li>3 İdiots</li>
+                <li>Ghajini</li>
+            </div>
+        </div>
+         <!--box-2------------------------>
+         <div class="movies-box">
+            <!--img------------>
+            <div class="movies-img">
+                <img src="directors/quentin.jpg">
+                
+            </div>
+            <!--text--------->
+            <a href="https://tr.wikipedia.org/wiki/Quentin_Tarantino">
+               <h1>Quentin Tarantino</h1><br>
+            </a>
+            <div  style="color: white;" >
+                <li>Unce upon a time in Hollywood</li>
+                <li>Pulp Fiction </li>
+                <li>Kill Bill</li>
+            </div>
+        </div>
+         <!--box-3------------------------>
+         <div class="movies-box">
+            <!--img------------>
+            <div class="movies-img">
+                <img src="directors/zeki.jpg">
+            </div>
+            <!--text--------->
+            <a href="https://tr.wikipedia.org/wiki/Zeki_Demirkubuz">
+                <h1>Zeki Demirkubuz</h1>
+            </a>
+                <div  style="color: white;" >
+                  <li>Kader</li>
+                  <li>Masumiyet</li>
+                  <li>Yeraltı</li>
+              </div>
+            
+        </div>
+         
+      
+        </div>
+    </section>
+<!--btns--------------->
+    <div class="btns">
+        <a href="#">Previous</a>
+        <a href="#">Next</a>
+    </div>
+    <!--footer---------------- OZAN -->
+    <footer>
+       
+    </footer>
+
+</body>
+</html>

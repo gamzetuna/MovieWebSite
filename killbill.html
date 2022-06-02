@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/8fa8160045.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primColor: #272727;
+            --secoColor: #ffffff;
+            --cornerRad: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: var(--primColor);
+            font: 14px Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+        }
+        .logo {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            height: 58px;
+        }
+
+            .navbar a {
+                float: left;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+        .subnav {
+            float: left;
+            overflow: hidden;
+        }
+
+            .subnav .subnavbtn {
+                font-size: 16px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+                cursor: pointer;
+            }
+
+            .navbar a:hover, .subnav:hover .subnavbtn {
+                background-color: red;
+                border-radius: var(--cornerRad);
+            }
+
+        .subnav-content {
+            display: none;
+            position: absolute;
+            background-color: #b8b8b8;
+            width: 100%;
+            z-index: 1;
+        }
+
+            .subnav-content a {
+                float: left;
+                color: white;
+                text-decoration: none;
+                width: 100%;
+            }
+
+                .subnav-content a:hover {
+                    background-color: #eee;
+                    color: black;
+                    width: 72%;
+                }
+
+        .subnav:hover .subnav-content {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+        #giriskayit {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            position: absolute;
+            right: 0;
+            width: 16%;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        /*****KULLANICI KAYİT/GİRİS*/
+        .myForm1 {
+            display: none;
+        }
+
+        .myForm2 {
+            display: block;
+        }
+
+        form {
+            height: 520px;
+            width: 400px;
+            /*background-color: rgba(255,255,255,0.13);*/
+            background-color: rgb(8 7 16 / 60%);
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 40px rgba(8,7,16,0.6);
+            padding: 50px 35px;
+            z-index: 100;
+        }
+
+        .kayitform {
+            height: fit-content;
+            top: 71%;
+        }
+
+        form * {
+            font-family: 'Poppins',sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        form h3 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        label {
+            display: block;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        input {
+            display: block;
+            height: 50px;
+            width: 100%;
+            background-color:whitesmoke;
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        ::placeholder {
+            color: #e5e5e5;
+        }
+
+        button {
+            margin-top: 22px;
+            width: 100%;
+            background-color: #ffffff;
+            color: #080710;
+            padding: 10px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .open-button-nav {
+            border-color: darkslategray;
+            width: 10%;
+            background-color: var(--primColor);
+            color: var(--secoColor);
+            border: none;
+            position: relative;
+            font: 14px Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+        }
+
+        .open-button-nav1 {
+            width: 8%;
+            background-color: var(--primColor);
+            color: var(--secoColor);
+            border: none;
+            position: relative;
+            font: 14px Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+        }
+        .social {
+            margin-top: 30px;
+            display: flex;
+        }
+
+            .social div {
+                background: red;
+                width: 150px;
+                border-radius: 3px;
+                padding: 5px 10px 10px 5px;
+                background-color: rgba(255,255,255,0.27);
+                color: #eaf0fb;
+                text-align: center;
+            }
+
+                .social div:hover {
+                    background-color: rgba(255,255,255,0.47);
+                }
+
+            .social .fb {
+                margin-left: 25px;
+            }
+
+            .social i {
+                margin-right: 4px;
+            }
+
+
+
+        #anaDiv {
+            top: 50px;
+            width:1000px;
+            height: 700px;
+            margin: 0 auto;
+             padding: 20px;
+        }
+        #videoekleme {
+            border: 2px solid lightgray;
+            width: 100%;
+            height: 450px;
+            margin-bottom:10px;
+            margin-top:10px;
+            margin-right:10px;
+            margin-left:30px;
+        }
+        #ozellikler {
+            width: 100%;
+            height: 350px;
+            margin-left: 30px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+            #ozellikler > p {
+                color: white;
+                font-weight: revert;
+                font-family:revert;
+              
+               }
+        #yorum {
+            color: snow;
+            font-family: inherit;
+            margin: 30px;
+        }
+        h3{
+            color:white;
+            font-family:revert;
+            margin: 30px;
+        }
+        @media screen and (max-width:600px) {
+            body{
+                display:flex;
+                flex-direction: row;
+            }           
+        } 
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="images/logofb.jpg" style="width:100px;" />
+    </div>
+    <div class="navbar">
+        <div class="subnav">
+            <button class="subnavbtn" onclick="window.location.href='anasayfa.html'"> Filmler <!--<i class="fa fa-caret-down"></i>--></button>
+            <!--<div class="subnav-content">
+                <a href="#company">Company</a>
+                <a href="#team">Team</a>
+                <a href="#careers">Careers</a>
+            </div>-->
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn" onclick="window.location.href='tur.html'"> Tür <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="#romantic">Romantic</a>
+                <a href="#comedi">Comedy</a>
+                <a href="#aksiyon">Action</a>
+                <a href="#korku">Horror</a>
+                <!--<a href="#macera">Adventure</a>
+                <a href="#fantastik">Fantasy</a>
+                <a href="#batılı">Western</a>
+                <a href="#bilimkurgu">Science Fiction</a>
+                <a href="#dram">Drama</a>
+                <a href="animasyon.html">Animasyon</a>
+                <a href="#çizgifilm">Cartoon</a>
+                <a href="#gizem">Mystery</a>
+                <a href="#savaş">War</a>
+                <a href="#spor">Spor</a>-->
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn" onclick="window.location.href='anasayfa.html'"> Yönetmenler <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="#">En Popüler Yönetmenler</a>
+                <a href="#">En Çok Ödül Alan Yönetmenler</a>
+                <a href="#">En Çok İzlenen Yönetmenler</a>
+            </div>
+        </div>
+        <div class="subnav">
+            <button class="subnavbtn" onclick="window.location.href='anasayfa.html'"> Oyuncular <i class="fa fa-caret-down"></i></button>
+            <div class="subnav-content">
+                <a href="#">En Popüler Oyuncular</a>
+                <a href="#">En Çok Ödül Alan Oyuncular</a>
+            </div>
+        </div>
+        <div id="giriskayit">
+            <a class="navbar" href="#" onclick="openForm()">Kayıt Ol</a>
+            <a class="navbar" href="#" onclick="openForm2()">Giriş Yap</a>
+        </div>
+    </div>
+
+    <div id="myForm" class="myForm1">
+        <form class="kayitform">
+            <h3>Kayıt Ol</h3>
+
+            <label for="username"><b>Kullanıcı Nickname</b></label>
+            <input type="text" placeholder="Email or Phone" id="username">
+
+            <label for="name"><b>İsim</b></label>
+            <input type="text" name="isim" value="" placeholder="Ad Giriniz" required />
+
+            <label for="password">Şifre</label>
+            <input type="password" placeholder="Password" id="password">
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="birthday"><b>Doğum Tarihi</b></label>
+            <input type="date" name="dtarihi" value="" />
+
+            <button>Giriş</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Kapat</button>
+
+            <div class="social">
+                <div class="go"><i class="fab fa-google"></i>  Google</div>
+                <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+            </div>
+        </form>
+    </div>
+
+    <div id="myFormKayit" class="myForm1">
+        <form class="Girisform">
+            <h3>Kullanıcı Girişi</h3>
+
+            <label for="username">Kullanıcı Adı</label>
+            <input type="text" placeholder="Email or Phone" id="username">
+
+            <label for="password">Şifre</label>
+            <input type="password" placeholder="Password" id="password">
+
+            <button>Giriş</button>
+            <button type="button" class="btn cancel" onclick="closeForm2()">Kapat</button>
+
+            <div class="social">
+                <div class="go"><i class="fab fa-google"></i>  Google</div>
+                <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function openForm() {
+            document.getElementById("myForm").classList.toggle("myForm1");
+            //    document.getElementById("myForm").style.display = "block";
+            //    document.getElementById("p5").classList.toggle("yeniStil");
+        }
+
+        function closeForm() {
+            //document.getElementById("myForm").style.display = "none";
+            document.getElementById("myForm").classList.toggle("myForm1");
+        }
+        function openForm2() {
+            document.getElementById("myFormKayit").classList.toggle("myForm1");
+            //    document.getElementById("myForm").style.display = "block";
+            //    document.getElementById("p5").classList.toggle("yeniStil");
+        }
+
+        function closeForm2() {
+            //document.getElementById("myForm").style.display = "none";
+            document.getElementById("myFormKayit").classList.toggle("myForm1");
+        }
+    </script>
+    <div id="anaDiv">
+        <div id="videoekleme">
+            <iframe width="100%" height="100%"
+                    src="https://www.youtube.com/embed/Bpn7BA4TE6o" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </div>
+        <div id="ozellikler">
+            <p>Film Adı   : Kill Bill</p>
+            <p>Oyuncular  : Uma Thurman, Lucy Liu, Vivica A. Fox, Daryl Hannah</p>
+            <p>Yönetmen   : Quantin Tarantino </p>
+            <p>Yapım Yılı : 2004</p>
+            <p>Aldığı Ödüller : En İyi Kötü Karekter Dalında MTV, En İyi Dövüş Sahnesi Dalında MTV Film Ödülü </p>
+            <p>Süre :247 dakika </p>
+            <p>Bütçe      : 60 milyon$</p>
+            <p>Hasılat    : 333,1 milyon$</p>
+            <p style="word-wrap:break-word">
+                Konu       : Gelin (Uma Thurman), Kill Bill: Vol.1'de anlatıldığı gibi, O-Ren İşi (Lucy Liu) ve Vernita Green'den
+                (Vivica A. Fox) öcünü almış ve listesindeki son üç kişinin peşine düşmüştür. Budd (Michael Madsen) ve Elle Driver'ı
+                (Daryl Hannah) da öldürdükten sonra, son hesaplaşma için Bill'in (David Carradine) evine gider. Burada, önce kendisini
+                şok eden bir duruma düşer ve öldüğünü sandığı, şu an için dört yaşında olan kızıyla karşılaşır. Sonrasındaysa,
+                Bill ile yaptıkları karşılıklı diyalog hesaplaşmalarından sonra, filmin zirvesini oluşturan bir mücadelenin ardından Bill'i öldürür.
+            </p>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr />
+
+
+       <h3>Film Hakkında Ne Düşünüyorsun?</h3>
+        <div id="yorum">
+            <table>
+                <tr>
+                    <td style="font-weight: bold;font-family: inherit;">Nickname:</td>
+                    <td> <input type="text" name="isim" value="" placeholder="Ad Giriniz" required /></td>
+                </tr>
+               
+               <tr>
+                    <td style="font-weight: bold;font-family: inherit;">Yorum: </td>
+                    <td><textarea style="resize: none; width: 200px; height: 80px;" name="gorus" placeholder="Görüş ve önerilerinizi yazınız. " autofocus></textarea> </td>
+                </tr>
+                <td><input type="submit" name="SUBMİT" value="Gönder" /> </td>
+            </table>
+        </div>
+    </div>
+   
+
+</body>
+</html>
